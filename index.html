@@ -10,8 +10,8 @@
 		<!--Character Set Meta -->
 		<meta charset="utf-8" />
 		<!-- description and keywords for search engines -->
-		<meta name="description" content=" " />
-		<meta name="keywords" content=" " />
+		<meta name="description" content="This app is to keep track of various types of lists" />
+		<meta name="keywords" content="list, my, organize, track" />
 		<!-- Allows search engine robots to index our page in a search engine and
 		follow (continue reading through) links on our page -->
 		<meta name="robots" contents="index follow" />
@@ -41,63 +41,129 @@
 		
 				
 		<!--Page Titel-->
-		<title></title>
+		<title>My List</title>
 		
 		<!-- Import our CSS Styles -->
-		<link href="css/themes/jquery.movile-1.3.1.css" rel="stylesheet" type="text/css" />
+		<link href="css/themes/jquery.mobile-1.3.1.css" rel="stylesheet" type="text/css" />
+		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<!-- JS is normally at the end of the body, except for Modenizer which enables HTML elements and feature detects -->
+		<!--<script src="js/libs/modernizr.custom.min.js"></script>-->
 		
-		<!-- Call our JavaScript file -->
-		<script src="folder/file.js" type="text/javascript"></script>
-	
 	</head>
 	<body>
 		<!-- Home Page -->
 		<div data-role="page" id="homepage">
-			<div data-role="header">
+			<div data-role="header" data-postition="fixed" data-id="homepage" id="header" data-theme="b" >
 				<header>
-				
-				<!-- Page Header -->
-				
+					<h1>Home</h1>
 				</header>
 			</div>
 			
 			<div data-role="content">
-			
-			<!-- Page Content -->
-			
+					<label for="search">Browse through saved lists:</label>
+					<input type="search" id="search" data-mini="true" value="" placeholder="Browse through saved lists..."/>
+					<h3><a href="#displaypage" data-role="button" data-mini="true" data-theme="b" id="searchbtn">Browse</a></h3>
 			</div>
 			
-			<div data-role="footer">
-			
-			<!-- Page Footer -->
-			
+			<div data-role="content">
+				<h3><a href="#addpage" data-role="button" data-theme="b" id="addbtn">Add A List</a></h3>
 			</div>
 			
-		</div>
+			<div data-role="footer" data-position="fixed" data-id="homepage">
+				<div data-role="navbar" dat-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
+						<li><a href="#displaypage" data-icon="search" data-theme="b">Browse</a></li>
+						<li><a href="#addpage" data-icon="plus" data-theme="b">Add/Edit</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div><!-- End Home Page -->
 		
 		<!-- Add Page -->
 		<div data-role="page" id="addpage">
-			<div data-role="header">
+			<div data-role="header" data-position="fixed" data-id="addpage" data-theme="b">
 				<header>
-				
-				<!-- Page Header -->
-				
+					<h1>Create A List</h1>
 				</header>
 			</div>
 			
 			<div data-role="content">
-			
-			<!-- Page Content -->
-			
+				<form action="" id="addform">			
+					<fieldset id="fieldset">
+						<legend>Create a new list</legend>
+						<span>*Fields are required</span>
+						<ul id="errors"></ul>
+						
+						<div data-role="fieldcontain">
+							<label for="title">*List Title:</label>
+							<input type="text" data-clear-btn="true" name="title" id="title" placeholder="Shopping list" data-mini="true" />
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="category">*List Category:</label>
+							<input type="text" data-clear-btn="true" name="category" id="category" placeholder="Groceries" data-mini="true" />
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="location">*List Location:</label>
+							<input type="text" data-clear-btn="true" name="location" id="location" placeholder="Waltmart, Staples, Etc..." data-mini="true" />
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="date">List Date:</label>
+							<input type="date" data-clear-btn="true" name="date" id="date" placeholder="MM/DD/YYYY" data-mini="true" />
+						</div>
+						
+						<div data-role="fieldcontain">
+							<label for="items">*List Items:</label>
+							<textarea data-clear-btn="true" name="items" id="items" placeholer="Enter items on your list here" data-mini="true"></textarea>
+						</div>
+					</fieldset>
+					
+					<div data-role="fieldcontain">
+						<input type="submit" value="Save Your List" id="save" data-theme="b" /><br/>
+						<input type="reset" value="Clear The Fomr" id="clear" data-mini="true"/>
+					</div>
+				</form>
 			</div>
 			
-			<div data-role="footer">
-			
-			<!-- Page Footer -->
-			
+			<div data-role="footer" data-position="fixed" data-id="addpage">
+				<div data-role="navbar" dat-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b">Home</a></li>
+						<li><a href="#displaypage" data-icon="search" data-theme="b">Browse</a></li>
+						<li><a href="#addpage" data-icon="plus" data-theme="b" class="ui-btn-active">Add/Edit</a></li>
+					</ul>
+				</div>
 			</div>
 			
-		</div>
+		</div><!-- End Add Page -->
+	
+		<div data-role="page" id="displaypage">
+			<div data-role="header" data-position="fixed" data-id="displaypage" data-theme="b">
+				<header>
+					<h1>View Lists</h1>
+				</header>
+			</div>
+			
+			<div data-role="content">
+				<ul id="displayContent">		
+				</ul>
+			</div>
+			
+			<div data-role="footer" data-position="fixed" data-id="displaypage">
+				<div data-role="navbar" dat-iconpos="top">
+					<ul>
+						<li><a href="#homepage" data-icon="home" data-theme="b">Home</a></li>
+						<li><a href="#displaypage" data-icon="search" data-theme="b" class="ui-btn-active">Browse</a></li>
+						<li><a href="#addpage" data-icon="plus" data-theme="b">Add/Edit</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div><!-- End Display Page -->
 	
 		<script src="js/libs/jquery-1.10.1.js" type="text/javascript"></script>
 		<script src="js/libs/jquery.mobile-1.3.1.js" type="text/javascript"></script>
