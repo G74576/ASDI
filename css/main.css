@@ -3,3 +3,9 @@ Kevin O'Toole
 ASDI 1306
 CSS Template
 */
+
+h1{
+	text-align: center;
+	padding: 5px;
+	margin: 0px;
+}

@@ -11,3 +11,8 @@ $('#addpage').on('pageinit', function(){
 
 
 });
+
+$('#displaypage').on('pageinit', function(){
+
+
+});
