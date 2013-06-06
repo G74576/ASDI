@@ -46,35 +46,37 @@
 		<!-- Import our CSS Styles -->
 		<link href="css/themes/jquery.mobile-1.3.1.css" rel="stylesheet" type="text/css" />
 		<link href="css/main.css" rel="stylesheet" type="text/css" />
+		<link href="css/themes/custom7.css" rel="stylesheet" type="text/css" />	
 		<!-- JS is normally at the end of the body, except for Modenizer which enables HTML elements and feature detects -->
-		<!--<script src="js/libs/modernizr.custom.min.js"></script>-->
+		<script src="js/libs/modernizr.custom.min.js"></script>
 		
 	</head>
 	<body>
 		<!-- Home Page -->
 		<div data-role="page" id="homepage">
-			<div data-role="header" data-postition="fixed" data-id="homepage" id="header" data-theme="b" >
+			<div data-role="header" data-postition="fixed" data-id="homepage" id="header" data-theme="a" >
 				<header>
 					<h1>Home</h1>
 				</header>
 			</div>
 			
-			<div data-role="content">
-					<label for="search">Browse through saved lists:</label>
-					<input type="search" id="search" data-mini="true" value="" placeholder="Browse through saved lists..."/>
-					<h3><a href="#displaypage" data-role="button" data-mini="true" data-theme="b" id="searchbtn">Browse</a></h3>
+			<div data-role="content" id="cta">
 			</div>
 			
 			<div data-role="content">
-				<h3><a href="#addpage" data-role="button" data-theme="b" id="addbtn">Add A List</a></h3>
+				<label for="search">Browse through saved lists:</label>
+				<input type="search" id="search" data-mini="true" value="" placeholder="Browse through saved lists..."/>
+				<a href="#displaypage" data-role="button" data-mini="true" data-theme="a" id="searchbtn">Browse</a>
+				<br/>
+				<h3><a href="#addpage" data-role="button" data-theme="a" id="addbtn">Add A List</a></h3>
 			</div>
 			
 			<div data-role="footer" data-position="fixed" data-id="homepage">
 				<div data-role="navbar" dat-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b" class="ui-btn-active">Home</a></li>
-						<li><a href="#displaypage" data-icon="search" data-theme="b">Browse</a></li>
-						<li><a href="#addpage" data-icon="plus" data-theme="b">Add/Edit</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a" class="ui-btn-active">Home</a></li>
+						<li><a href="#displaypage" data-icon="search" data-theme="a">Browse</a></li>
+						<li><a href="#addpage" data-icon="plus" data-theme="a">Add/Edit</a></li>
 					</ul>
 				</div>
 			</div>
@@ -83,7 +85,7 @@
 		
 		<!-- Add Page -->
 		<div data-role="page" id="addpage">
-			<div data-role="header" data-position="fixed" data-id="addpage" data-theme="b">
+			<div data-role="header" data-position="fixed" data-id="addpage" data-theme="a">
 				<header>
 					<h1>Create A List</h1>
 				</header>
@@ -123,7 +125,7 @@
 					</fieldset>
 					
 					<div data-role="fieldcontain">
-						<input type="submit" value="Save Your List" id="save" data-theme="b" /><br/>
+						<input type="submit" value="Save Your List" id="save" data-theme="a" /><br/>
 						<input type="reset" value="Clear The Fomr" id="clear" data-mini="true"/>
 					</div>
 				</form>
@@ -132,9 +134,9 @@
 			<div data-role="footer" data-position="fixed" data-id="addpage">
 				<div data-role="navbar" dat-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b">Home</a></li>
-						<li><a href="#displaypage" data-icon="search" data-theme="b">Browse</a></li>
-						<li><a href="#addpage" data-icon="plus" data-theme="b" class="ui-btn-active">Add/Edit</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="#displaypage" data-icon="search" data-theme="a">Browse</a></li>
+						<li><a href="#addpage" data-icon="plus" data-theme="a" class="ui-btn-active">Add/Edit</a></li>
 					</ul>
 				</div>
 			</div>
@@ -142,7 +144,7 @@
 		</div><!-- End Add Page -->
 	
 		<div data-role="page" id="displaypage">
-			<div data-role="header" data-position="fixed" data-id="displaypage" data-theme="b">
+			<div data-role="header" data-position="fixed" data-id="displaypage" data-theme="a">
 				<header>
 					<h1>View Lists</h1>
 				</header>
@@ -156,9 +158,9 @@
 			<div data-role="footer" data-position="fixed" data-id="displaypage">
 				<div data-role="navbar" dat-iconpos="top">
 					<ul>
-						<li><a href="#homepage" data-icon="home" data-theme="b">Home</a></li>
-						<li><a href="#displaypage" data-icon="search" data-theme="b" class="ui-btn-active">Browse</a></li>
-						<li><a href="#addpage" data-icon="plus" data-theme="b">Add/Edit</a></li>
+						<li><a href="#homepage" data-icon="home" data-theme="a">Home</a></li>
+						<li><a href="#displaypage" data-icon="search" data-theme="a" class="ui-btn-active">Browse</a></li>
+						<li><a href="#addpage" data-icon="plus" data-theme="a">Add/Edit</a></li>
 					</ul>
 				</div>
 			</div>
