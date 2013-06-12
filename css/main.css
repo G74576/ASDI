@@ -31,7 +31,17 @@ h1{
 	height: 200px;
 	margin: 5px 0px 0px 0px;
 	padding: 10px 0px 0px 0px;
+	position: relative;
 }
+
+#addbtn{
+	text-shadow: none;
+	position: absolute;
+	right: 5px;
+	bottom: 0;
+
+}
+
 /*
 Add Item Page CSS
 */
