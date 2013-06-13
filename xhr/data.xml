@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+	<list>
+		<title>Fun Stuff</title>
+		<category>Misc</category>
+		<location>Mall</location>
+		<date>06/06/13</date>
+		<items>Shirts, Pants, Jacket</items>
+	</list>
+	<list>
+		<title>Laundry Room</title>
+		<category>Cleaning Supplies</category>
+		<location>Walmart</location>
+		<date>05/15/13</date>
+		<items>Bleach, Soap</items>
+	</list>
+	<list>
+		<title>For The Kids</title>
+		<category>Snacks</category>
+		<location>Publix</location>
+		<date>12/15/12</date>
+		<items>Snack Packs, Pudding, Fruit</items>
+	</list>
+	<list>
+		<title>Back to School</title>
+		<category>School Supplies</category>
+		<location>Walmart</location>
+		<date>09/12/12</date>
+		<items>Pencils, Pens, Paper</items>
+	</list>
+	<list>
+		<title>Shopping</title>
+		<category>Groceries</category>
+		<location>Publix</location>
+		<date>04/14/13</date>
+		<items>Milk, Break, Eggs</items>
+	</list>	
+</items>

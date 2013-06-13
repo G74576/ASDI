@@ -4,7 +4,7 @@ ASDI 1306
 CSS Template
 */
 
-#homepage, #addpage, #displaypage{
+#homepage, #addpage, #displaypage, #jsonPage, #xmlPage{
 	background: rgb(135,224,253); /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  rgba(135,224,253,1) 20%, rgba(83,203,241,1) 62%, rgba(5,171,224,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(20%,rgba(135,224,253,1)), color-stop(62%,rgba(83,203,241,1)), color-stop(100%,rgba(5,171,224,1))); /* Chrome,Safari4+ */
@@ -31,7 +31,17 @@ h1{
 	height: 200px;
 	margin: 5px 0px 0px 0px;
 	padding: 10px 0px 0px 0px;
+	position: relative;
 }
+
+#addbtn{
+	text-shadow: none;
+	position: absolute;
+	right: 5px;
+	bottom: 0;
+
+}
+
 /*
 Add Item Page CSS
 */
