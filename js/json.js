@@ -31,5 +31,12 @@ var json = {
 		"location": ['List Location:', "Walmart"],
 		"date": 	['List Date:', "05/27/13"],
 		"items": 	['List Items:', "Bleach, Windex, Soap"]
+	},
+	"list05":{
+		"title": 	['List Title:', "Odds & Ends"],
+		"category": ['List Category:', "Misc"],
+		"location": ['List Location:', "Other"],
+		"date": 	['List Date:', "05/27/13"],
+		"items": 	['List Items:', "Needles, Hammer, Yarn, Tape"]
 	}
 }
