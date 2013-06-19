@@ -4,6 +4,48 @@
 
 $('#homepage').on('pageinit', function(){
 
+/*	//Search Function
+	function id(x){
+		var elementId = document.getElementById(x);
+		return elementId;
+	}
+	
+	var search = id("searchbtn");
+	search.addEventListener("click", getSearch);
+	
+	function getSearch(){
+		var term = id("search").value;
+		
+		if(term != ""){
+		var myUlTag = document.createElement("ul");
+		var myDiv = id("displaypage");
+		myDiv.appendChild(myUlTag);	
+			for(var i=0, len=localStorage.length; i<len; i++){ 			
+				//var myLi = document.createElement("li");
+				//myUlTag.appendChild(myLi);
+				var key = localStorage.key(i); 							
+				var value = localStorage.getItem(key); 					
+				var item = JSON.parse(value); 						    
+				//var myNewUl = document.createElement("ul");
+				//myLi.appendChild(myNewUl);
+				//getImage(item.group[1], myUlTag);
+				for(n in item){
+					if(term === item[n][1]){
+						for(q in item){
+							var myNewLi = document.createElement("li");
+							myNewLi.setAttribute("id", "searchLI");
+							myUlTag.appendChild(myNewLi);
+							var optNewSubText = item[q][0] + " " + item[q][1]; 
+							myNewLi.innerHTML = optNewSubText;				
+		//					console.log(item[q][0]+": "+item[q][1]);
+						}
+					}
+				}
+			}
+		}
+	}
+	getSearch();*/
+	
 	//Json Function
 	$('#jsonBtn').on('click', function(){
 		$.mobile.changePage('#jsonPage',{});
@@ -158,13 +200,13 @@ $('#API').on('pageinit', function(){
 	
 	function editList(editKey){
 		var key = $(this).data('key');
-		var getListData = localStorage.getItem(key);
-		var item = JSON.parse(getData);
+		var getListData = localStorage.getItem(editKey);
+		var item = JSON.parse(getListData);
 		$('#title').val(item.title[1]);
 		$('#category').val(item.category[1]);
 		$('#location').val(item.location[1]);
-		$('date').val(item.date[1]);
-		$('items').val(item.items[1]);
+		$('#date').val(item.date[1]);
+		$('#items').val(item.items[1]);
 		//saveNewList.removeEventListener('click', saveData);
 		//$('#save').val('Edit List');
 		//var editListInfo = $('#save');
@@ -201,6 +243,9 @@ $('#API').on('pageinit', function(){
 	
 	
 	$('#display').on('click', getData);
+	$('#hDisplay').on('click', getData);
+	$('#jDisplay').on('click', getData);
+	$('#xDisplay').on('click', getData);
 	$('#clearLocal').on('click', clearLocal);	
 	$('form #savebtn').on('click', saveData);
 	
