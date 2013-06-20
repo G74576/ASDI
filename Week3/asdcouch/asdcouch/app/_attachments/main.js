@@ -47,44 +47,11 @@ $('#homepage').on('pageinit', function(){
 	getSearch();*/
 	
 	//Json Function
-	//Couch JSON Call
 	$('#jsonBtn').on('click', function(){
 		$.mobile.changePage('#jsonPage',{});
 		$('#jsonContent').empty();
 		$.ajax({
-			url		: "_view/courses",
-			type	: "GET",
-			dataType: "json",
-			success : function(data){
-				alert("JSON data success");
-				for(var i=0, j=response.lists.length; i<j; i++){
-					var lis = response.lists[i]
-					$(''+
-						'<div>' +
-							'<h3>' + lis.title + '</h3>' +
-							'<p>' + lis.category + '</p>' +
-							'<p>' + lis.location + '</p>' +
-							'<p>' + lis.date + '</p>' +
-							'<p>' + lis.items + '</p>' +
-						'</dvi>'							
-					).appendTo('#jsonContent');		
-				};
-				/*$.each(data.rows, function(index, list){
-					var title = list.value.title;
-					var category = list.value.category;
-					var location = list.value.location;
-					var date = list.value.date;
-					var items = list.value.items;
-					$("jsonContent").append($('<li>').text(category));
-				});*/
-			}
-		});
-	});
-/*	$('#jsonBtn').on('click', function(){
-		$.mobile.changePage('#jsonPage',{});
-		$('#jsonContent').empty();
-		$.ajax({
-			url		: 'xhr/data.json',
+			url		: 'data.json',
 			type	: 'GET',
 			dataType: 'json',
 			success	: function(response){
@@ -114,16 +81,16 @@ $('#homepage').on('pageinit', function(){
 					);
 					makeList.append(makeLi).appendTo('#jsonContent');
 				});*/
-			/*}
+			}
 		});
 	});	
-*/
+
 	//XML Function
-/*	$('#xmlBtn').on('click', function(){
+	$('#xmlBtn').on('click', function(){
 		$.mobile.changePage('#xmlPage',{});
 		$('#xmlContent').empty();
 		$.ajax({
-			url		: 'xhr/data.xml',
+			url		: 'data.xml',
 			type	: 'GET',
 			dataType: 'xml',
 			success	: function(items){
@@ -149,7 +116,7 @@ $('#homepage').on('pageinit', function(){
 				});
 			}
 		});
-	});	*/
+	});
 });
 
 $('#addpage').on('pageinit', function(){
@@ -222,10 +189,45 @@ $('#API').on('pageinit', function(){
 	// Auto fill from local storage
 
 	var autofillData = function (){
-	 	for(var n in json){
+		//Couch JSON Call
+		$.ajax({
+			url		: "_view/courses",
+			dataType: "json",
+			success : function(data){
+				$.each(data.rows, function(index, list){
+					var tit = list.value.title;
+					var cat = list.value.category;
+					var loc = list.value.location;
+					var dat = list.value.date;
+					var ite = list.value.items;
+					var couchJson = $(''+
+						'<div>' +
+							'<h3>' + tit[1] + '</h3>' +
+							'<p>' + cat[1] + '</p>' +
+							'<p>' + loc[1] + '</p>' +
+							'<p>' + dat[1] + '</p>' +
+							'<p>' + ite[1] + '</p>' +
+						'</dvi>'							
+					).appendTo('#displayContent');
+				});
+				/*for(var i=0, j=response.lists.length; i<j; i++){
+					var lis = response.lists[i]
+					$(''+
+						'<div>' +
+							'<h3>' + lis.title + '</h3>' +
+							'<p>' + lis.category + '</p>' +
+							'<p>' + lis.location + '</p>' +
+							'<p>' + lis.date + '</p>' +
+							'<p>' + lis.items + '</p>' +
+						'</dvi>'							
+					).appendTo('#jsonContent');		
+				};*/
+			}
+		});	 	
+	 	/*for(var n in json){
 	 		var id = Math.floor(Math.random()*1000001);
 	 		localStorage.setItem(id, JSON.stringify(json[n]));
-	 	}
+	 	}*/
 	}
 	
 	
